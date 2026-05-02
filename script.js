@@ -1,3 +1,103 @@
+   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const revealObserver = new IntersectionObserver(
+  (entries) => {
+    for (const entry of entries) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      }
+    }
+  },
+  { threshold: 0.14 }
+);
+
+document.querySelectorAll("[data-reveal]").forEach((item) => revealObserver.observe(item));
+
+function setupNeuralCanvas() {
+  const canvas = document.getElementById("neural-canvas");
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d");
+  const pointer = { x: 0, y: 0, active: false };
+  let nodes = [];
+  let width = 0;
+  let height = 0;
+  let dpr = 1;
+
+  function resize() {
+    const rect = canvas.getBoundingClientRect();
+    dpr = Math.min(window.devicePixelRatio || 1, 2);
+    width = rect.width;
+    height = rect.height;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.max(42, Math.min(95, Math.floor((width * height) / 19000)));
+    nodes = Array.from({ length: count }, (_, index) => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      vx: (Math.random() - 0.5) * 0.34,
+      vy: (Math.random() - 0.5) * 0.34,
+      r: index % 7 === 0 ? 2.2 : 1.35,
+      hue: index % 3,
+    }));
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+    const maxDistance = width < 720 ? 115 : 150;
+
+    for (const node of nodes) {
+      if (!prefersReducedMotion) {
+        node.x += node.vx;
+        node.y += node.vy;
+      }
+
+      if (node.x < 0 || node.x > width) node.vx *= -1;
+      if (node.y < 0 || node.y > height) node.vy *= -1;
+
+      if (pointer.active) {
+        const dx = node.x - pointer.x;
+        const dy = node.y - pointer.y;
+        const distance = Math.hypot(dx, dy);
+        if (distance < 180 && distance > 0.01) {
+          const force = (180 - distance) / 180;
+          node.x += (dx / distance) * force * 1.8;
+          node.y += (dy / distance) * force * 1.8;
+        }
+      }
+    }
+
+    for (let i = 0; i < nodes.length; i += 1) {
+      for (let j = i + 1; j < nodes.length; j += 1) {
+        const a = nodes[i];
+        const b = nodes[j];
+        const distance = Math.hypot(a.x - b.x, a.y - b.y);
+        if (distance < maxDistance) {
+          const alpha = (1 - distance / maxDistance) * 0.24;
+          ctx.strokeStyle = `rgba(17, 24, 39, ${alpha})`;
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.moveTo(a.x, a.y);
+          ctx.lineTo(b.x, b.y);
+          ctx.stroke();
+        }
+      }
+    }
+
+    for (const node of nodes) {
+      const colors = ["0, 166, 166", "255, 107, 87", "248, 184, 78"];
+      ctx.fillStyle = `rgba(${colors[node.hue]}, 0.78)`;
+      ctx.beginPath();
+      ctx.arc(node.x, node.y, node.r, 0, Math.PI * 2);
+      ctx.fill();
+    }
+
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener("resize", resize);
+  window.addEventListener("pointermove", (event) => {
     const rect = canvas.getBoundingClientRect();
     pointer.x = event.clientX - rect.left;
     pointer.y = event.clientY - rect.top;
