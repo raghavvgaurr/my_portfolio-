@@ -7,3 +7,6 @@ Skills – technologies and tools
 I use Contact – ways to connect with me .
 The website is fully responsive, meaning it works smoothly on desktops, tablets, and mobile devices
 
+
+live link :
+https://my-portfolio-1-z0zx.onrender.com/
