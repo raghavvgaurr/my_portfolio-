@@ -38,24 +38,6 @@ This portfolio is designed to showcase my technical expertise, academic projects
 
 ---
 
-## 📷 Preview
-
- Add a screenshot of your portfolio here.
-
-Example
-
-```
-imagesportfolio-preview.png
-```
-
-Then use
-
-```markdown
-![Portfolio Preview](imagesportfolio-preview.png)
-```
-
----
-
 ## 🚀 Running Locally
 
 Clone the repository
