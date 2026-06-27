@@ -6,7 +6,7 @@ The website serves as a central hub for recruiters, collaborators, and fellow de
 
 ## 🚀 Live Demo
 
-🔗 Portfolio Website httpsmy-portfolio-1-z0zx.onrender.com
+🔗 Portfolio Website https://my-portfolio-1-z0zx.onrender.com/
 
 \---
 
@@ -40,23 +40,14 @@ This portfolio is designed to showcase my technical expertise, academic projects
 
 \---
 
+
 ## 📷 Preview
 
-Add a screenshot of your portfolio here.
-
 Example
-
-```
-imagesportfolio-preview.png
-```
+![Portfolio Preview ](<Screenshot 2026-06-27 134136.png>)
+![Portfolio Preview](image.png)
 
 Then use
-
-```markdown
-!\[Portfolio Preview](imagesportfolio-preview.png)
-```
-
-\---
 
 ## 🚀 Running Locally
 
@@ -85,10 +76,12 @@ python app.py
 
 ## 📫 Connect With Me
 
-🌐 Portfolio httpsmy-portfolio-1-z0zx.onrender.com
+🌐 Portfolio https://my-portfolio-1-z0zx.onrender.com/
+
 💼 LinkedIn https://www.linkedin.com/in/raghav-gaur-32a9512a3/
 
 💻 GitHub httpsgithub.comraghavvgaurr
+
 📧 raghavgaur2103@mail.com
 
 \---
