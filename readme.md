@@ -8,39 +8,41 @@ The website serves as a central hub for recruiters, collaborators, and fellow de
 
 🔗 Portfolio Website httpsmy-portfolio-1-z0zx.onrender.com
 
----
+\---
 
 ## ✨ Features
 
- 👨‍💻 Professional introduction
- 🧠 AI & Machine Learning projects
- 📄 Research publications
- 🏆 Certifications and achievements
- 💼 Technical skills overview
- 📱 Fully responsive design
- 📬 Contact information and social links
+👨‍💻 Professional introduction
+🧠 AI \& Machine Learning projects
+📄 Research publications
+🏆 Certifications and achievements
+💼 Technical skills overview
+📱 Fully responsive design
+📬 Contact information and social links
 
----
+\---
 
 ## 🛠️ Tech Stack
 
- Frontend    Deployment 
- ----------  ---------- 
- HTML5       Render     
- CSS3        GitHub     
- JavaScript             
+Frontend    Deployment
 
----
+\---
+
+HTML5       Render  
+CSS3        GitHub  
+JavaScript
+
+\---
 
 ## 🎯 Purpose
 
 This portfolio is designed to showcase my technical expertise, academic projects, research work, and continuous learning journey. It provides an easy way for recruiters, mentors, and collaborators to explore my work and connect with me.
 
----
+\---
 
 ## 📷 Preview
 
- Add a screenshot of your portfolio here.
+Add a screenshot of your portfolio here.
 
 Example
 
@@ -51,23 +53,23 @@ imagesportfolio-preview.png
 Then use
 
 ```markdown
-![Portfolio Preview](imagesportfolio-preview.png)
+!\[Portfolio Preview](imagesportfolio-preview.png)
 ```
 
----
+\---
 
 ## 🚀 Running Locally
 
 Clone the repository
 
 ```bash
-git clone httpsgithub.comraghavvgaurrmy_portfolio-.git
+git clone httpsgithub.comraghavvgaurrmy\_portfolio-.git
 ```
 
 Go to the project directory
 
 ```bash
-cd my_portfolio-
+cd my\_portfolio-
 ```
 
 If it's a static website, simply open `index.html` in your browser.
@@ -79,15 +81,17 @@ pip install -r requirements.txt
 python app.py
 ```
 
----
+\---
 
 ## 📫 Connect With Me
 
- 🌐 Portfolio httpsmy-portfolio-1-z0zx.onrender.com
- 💼 LinkedIn Add your LinkedIn URL
- 💻 GitHub httpsgithub.comraghavvgaurr
- 📧 Email Add your email
+🌐 Portfolio httpsmy-portfolio-1-z0zx.onrender.com
+💼 LinkedIn https://www.linkedin.com/in/raghav-gaur-32a9512a3/
 
----
+💻 GitHub httpsgithub.comraghavvgaurr
+📧 raghavgaur2103@mail.com
+
+\---
 
 ⭐ If you like this portfolio, feel free to star the repository!
+
